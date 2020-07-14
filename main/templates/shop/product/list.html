@@ -1,0 +1,36 @@
+{% extends "shop/base.html" %}
+{% load static %}
+{% load i18n %}
+{% block title %}
+{% if category %}
+{{ category.name }}
+{% else %}
+{% trans "Products" %}
+{% endif %}
+{% endblock %}
+
+{% block content %}
+<div>
+	<h2 {% if not category %}{% endif %}>
+		<a href="{% url 'main:product_list' %}"></a>
+	</h2>
+</div>
+<div>
+	<h1>{% if category %}{{ category.name }}{% else %}{% trans "Products" %}{% endif %}</h1>
+	<div class="row">
+		{% for product in products %}
+
+		<div class="col m-3 text-center">
+
+
+					<a href="{{ product.get_absolute_url }}">
+						<img class="rounded" width="200" src="{% if product.image %}{{ product.image }}{% else %}{% static 'img/no_image.png' %}{% endif %}">
+					</a>
+					<h2 class=""><a href="{{ product.get_absolute_url }}">{{ product.name }}</a></h2>
+					<p class="">{{ product.price }} {% trans "rubles" %}</p>
+
+		</div>
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}
