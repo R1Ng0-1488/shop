@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-02 15:44+0500\n"
+"POT-Creation-Date: 2020-07-14 18:27+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,165 +20,225 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: .\main\templates\admin\orders\detail.html:12
-#: .\main\templates\shop\base.html:22
-msgid "Home"
-msgstr "Главная"
-
-#: .\main\templates\admin\orders\detail.html:16
+#: main/templates/admin/orders/detail.html:8
+#: main/templates/admin/orders/detail.html:16
 msgid "Order"
 msgstr "Заказ"
 
-#: .\main\templates\admin\orders\detail.html:19
+#: main/templates/admin/orders/detail.html:12 main/templates/shop/base.html:22
+msgid "Home"
+msgstr "Главная"
+
+#: main/templates/admin/orders/detail.html:19
 msgid "Print order"
 msgstr "Заказ печати"
 
-#: .\main\templates\admin\orders\detail.html:24
+#: main/templates/admin/orders/detail.html:24
 msgid "Created"
 msgstr "Создано"
 
-#: .\main\templates\admin\orders\detail.html:28
+#: main/templates/admin/orders/detail.html:28
 msgid "Customer"
 msgstr "Покупатель"
 
-#: .\main\templates\admin\orders\detail.html:36
+#: main/templates/admin/orders/detail.html:36
+#: main/templates/order/create.html:27
 msgid "Address"
 msgstr "Адрес"
 
-#: .\main\templates\admin\orders\detail.html:40
+#: main/templates/admin/orders/detail.html:40
 msgid "Total amount"
 msgstr "Общая сумма"
 
-#: .\main\templates\admin\orders\detail.html:44
+#: main/templates/admin/orders/detail.html:44
 msgid "Status"
 msgstr "Статус"
 
-#: .\main\templates\admin\orders\detail.html:45
+#: main/templates/admin/orders/detail.html:45
 msgid "Pending payment"
 msgstr "Ожидающий платеж"
 
-#: .\main\templates\admin\orders\detail.html:51
+#: main/templates/admin/orders/detail.html:51
 msgid "Items bought"
 msgstr "Предметы куплены"
 
-#: .\main\templates\admin\orders\detail.html:54
-#: .\main\templates\cart\detail.html:15
+#: main/templates/admin/orders/detail.html:54
+#: main/templates/cart/detail.html:15
 msgid "Product"
 msgstr "Продукт"
 
-#: .\main\templates\admin\orders\detail.html:55
-#: .\main\templates\cart\detail.html:19
+#: main/templates/admin/orders/detail.html:55
+#: main/templates/cart/detail.html:19
 msgid "Price"
 msgstr "Цена"
 
-#: .\main\templates\admin\orders\detail.html:56
-#: .\main\templates\cart\detail.html:16
+#: main/templates/admin/orders/detail.html:56
+#: main/templates/cart/detail.html:16
+#: main/templates/shop/product/detail.html:24
 msgid "Quantity"
 msgstr "Количество"
 
-#: .\main\templates\admin\orders\detail.html:57
-#: .\main\templates\admin\orders\detail.html:70
-#: .\main\templates\cart\detail.html:62 .\main\templates\order\create.html:33
+#: main/templates/admin/orders/detail.html:57
+#: main/templates/admin/orders/detail.html:70
+#: main/templates/cart/detail.html:62 main/templates/order/create.html:61
 msgid "Total"
 msgstr "Всего"
 
-#: .\main\templates\admin\orders\detail.html:71
-#: .\main\templates\cart\detail.html:39 .\main\templates\cart\detail.html:40
-#: .\main\templates\cart\detail.html:48 .\main\templates\cart\detail.html:65
-#: .\main\templates\order\create.html:23 .\main\templates\order\create.html:29
-#: .\main\templates\order\create.html:33 .\main\templates\shop\base.html:46
-#: .\main\templates\shop\product\detail.html:21
-#: .\main\templates\shop\product\list.html:30
-msgid "rubles"
-msgstr "руб."
-
-#: .\main\templates\cart\detail.html:5 .\main\templates\cart\detail.html:10
+#: main/templates/cart/detail.html:5 main/templates/cart/detail.html:10
 msgid "Your shopping cart"
 msgstr "Ваша Корзина"
 
-#: .\main\templates\cart\detail.html:14
+#: main/templates/cart/detail.html:14
 msgid "Image"
 msgstr "Изображение"
 
-#: .\main\templates\cart\detail.html:17 .\main\templates\cart\detail.html:38
+#: main/templates/cart/detail.html:17 main/templates/cart/detail.html:38
 msgid "Remove"
 msgstr "Удалить"
 
-#: .\main\templates\cart\detail.html:18
+#: main/templates/cart/detail.html:18
 msgid "Unit price"
 msgstr "Цена за одну единицу товара"
 
-#: .\main\templates\cart\detail.html:46
+#: main/templates/cart/detail.html:46
 msgid "Subtitle"
 msgstr "Подзаголовок"
 
-#: .\main\templates\cart\detail.html:52
+#: main/templates/cart/detail.html:52
 msgid "coupon"
 msgstr "купон"
 
-#: .\main\templates\cart\detail.html:53
+#: main/templates/cart/detail.html:53
 msgid "off"
 msgstr "минус"
 
-#: .\main\templates\cart\detail.html:72
+#: main/templates/cart/detail.html:71
+msgid "Code"
+msgstr "Промкод"
+
+#: main/templates/cart/detail.html:73
 msgid "Apply"
 msgstr "Ввести"
 
-#: .\main\templates\cart\detail.html:76
+#: main/templates/cart/detail.html:77
 msgid "Continue shopping"
 msgstr "Продолжить покупку"
 
-#: .\main\templates\cart\detail.html:77 .\main\templates\order\create.html:3
-#: .\main\templates\order\create.html:8
+#: main/templates/cart/detail.html:78 main/templates/order/create.html:3
+#: main/templates/order/create.html:8
 msgid "Checkout"
 msgstr "Оформить"
 
-#: .\main\templates\order\create.html:14
+#: main/templates/includes/paginator.html:6
+msgid "Previous"
+msgstr "Предыдущая"
+
+#: main/templates/includes/paginator.html:12
+msgid "Next"
+msgstr "Следующая"
+
+#: main/templates/order/create.html:15
+msgid "First name"
+msgstr "Имя"
+
+#: main/templates/order/create.html:19
+msgid "Last name"
+msgstr "Фамилия"
+
+#: main/templates/order/create.html:31
+msgid "Postal code"
+msgstr "Почтовый код"
+
+#: main/templates/order/create.html:35
+msgid "City"
+msgstr "Город"
+
+#: main/templates/order/create.html:41
 msgid "Push"
 msgstr "Нажать"
 
-#: .\main\templates\order\create.html:18
+#: main/templates/order/create.html:46
 msgid "Your order"
 msgstr "Ваш заказ"
 
-#: .\main\templates\order\created.html:3 .\main\templates\order\created.html:8
+#: main/templates/order/created.html:3 main/templates/order/created.html:8
 msgid "Thank you"
 msgstr "Спасибо"
 
-#: .\main\templates\order\created.html:9
+#: main/templates/order/created.html:9
 msgid "Your order has been successfully completed. Your order number is"
 msgstr "Ваш заказ был завершен успешно. Ваш номер заказа"
 
-#: .\main\templates\shop\base.html:19
+#: main/templates/payment/canceled.html:3
+msgid "Canceled"
+msgstr "Отменено"
+
+#: main/templates/payment/canceled.html:8
+msgid "Your payment has not been processed"
+msgstr "Ваш платеж не был обработан"
+
+#: main/templates/payment/canceled.html:8
+msgid "There was a problem processing your payment."
+msgstr "При обработке вашего платежа возникла проблема."
+
+#: main/templates/payment/done.html:6
+msgid "Your payment was successful"
+msgstr "Ваш платеж прошел успешно"
+
+#: main/templates/payment/done.html:7
+msgid "Your payment has been processed successfully."
+msgstr "Ваш платеж был успешно обработан."
+
+#: main/templates/payment/process.html:4 main/templates/payment/process.html:9
+msgid "Pay by credit card"
+msgstr "Оплатить кредитной картой."
+
+#: main/templates/payment/process.html:11
+msgid "Card Number"
+msgstr "Номер карты"
+
+#: main/templates/shop/base.html:14 main/templates/shop/base.html:19
 msgid "Shop"
 msgstr "Интернет Магазин"
 
-#: .\main\templates\shop\base.html:29
+#: main/templates/shop/base.html:29
 msgid "Languages"
 msgstr "Языки"
 
-#: .\main\templates\shop\base.html:43 .\main\templates\shop\base.html:48
+#: main/templates/shop/base.html:43 main/templates/shop/base.html:48
 msgid "Your cart"
 msgstr "Ваша корзина"
 
-#: .\main\templates\shop\base.html:45
+#: main/templates/shop/base.html:45
 msgid "item"
 msgstr "товар"
 
-#: .\main\templates\shop\base.html:48
+#: main/templates/shop/base.html:48
 msgid " is empty"
 msgstr " пуста"
 
-#: .\main\templates\shop\base.html:59
+#: main/templates/shop/base.html:59
 msgid "Categories"
 msgstr "Категории"
 
-#: .\main\templates\shop\product\detail.html:8
-#: .\main\templates\shop\product\list.html:8
-#: .\main\templates\shop\product\list.html:19
+#: main/templates/shop/product/detail.html:8
+#: main/templates/shop/product/list.html:8
+#: main/templates/shop/product/list.html:19
 msgid "Products"
 msgstr "Продукты"
 
-#: .\main\templates\shop\product\detail.html:26
+#: main/templates/shop/product/detail.html:27
 msgid "Add to Cart"
 msgstr "Добавить в Корзину"
+
+#~ msgid "Email"
+#~ msgstr "Email"
+
+#~ msgid "Expiration Date"
+#~ msgstr "Истечение срока карты"
+
+#~ msgid "Pay"
+#~ msgstr "Оплатить"
+
+#~ msgid "rubles"
+#~ msgstr "руб."

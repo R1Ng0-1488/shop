@@ -5,34 +5,63 @@
 {% block content %}
 <div class="row">
     <div class="col">
-        <h1>{% trans "Checkout" %}</h1>
+        <h1 class="m-3">{% trans "Checkout" %}</h1>
         <div class="row">
-        <div class="col">
-            <form class="" action="" method="post">
-                {{ form.as_p }}
-                {% csrf_token %}
-                <button class="btn btn-dark" type="submit" name="button">{% trans "Push" %}</button>
-            </form>
-        </div>
-        <div class="col">
-            <h3>{% trans "Your order" %}</h3>
-            <ul>
-                {% for item in cart %}
-                <li>
-                {{ item.quantity }}x {{ item.product.name}}
-                <span>{{ item.total_price }} {% trans "rubles" %}</span>
-                </li>
-                {% endfor %}
-                {% if cart.coupon %}
-                <li>
-                    "{{ cart.coupon.code }}" ({{ cart.coupon.discount }}% off)
-                    <span>- {{cart.get_discount}} {% trans "rubles" %}</span>
-                </li>
-                {% endif %}
-            </ul>
-            <p>{% trans "Total" %}: {{ cart.get_total_price_after_discount }} {% trans "rubles" %}</p>
-        </div>
+            <div class="col-lg-6 col-sm-12">
+                <form class="m-2" action="" method="post">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td><label for="">{% trans "First name" %}</label><br></td>
+                                <td>{{ form.first_name }}<br></td>
+                            </tr>
+                            <tr>
+                                <td><label for="">{% trans "Last name" %}</label><br></td>
+                                <td>{{ form.last_name }}<br></td>
+                            </tr>
+                            <tr>
+                                <td><label for="">Email</label><br></td>
+                                <td>{{ form.email }}<br></td>
+                            </tr>
+                            <tr>
+                                <td><label for="">{% trans "Address" %}</label></td>
+                                <td>{{ form.address }}</td>
+                            </tr>
+                            <tr>
+                                <td><label for="">{% trans "Postal code" %}</label><br></td>
+                                <td>{{ form.postal_code }}<br></td>
+                            </tr>
+                            <tr>
+                                <td><label for="">{% trans "City" %}</label><br></td>
+                                <td>{{ form.city }}<br></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    {% csrf_token %}
+                    <button class="btn btn-dark my-2" type="submit" name="button">{% trans "Push" %}</button>
+                </form>
+            </div>
+        <div class="col-lg-6 col-sm-12 ">
+            <div class="col-6 bg-dark text-white rounded m-3">
+                <h3>{% trans "Your order" %}</h3>
+                <ul>
+                    {% for item in cart %}
+                    <li>
+                        {{ item.quantity }}x {{ item.product.name}}
+                        <span>${{ item.total_price }}</span>
+                    </li>
+                    {% endfor %}
+                    {% if cart.coupon %}
+                    <li>
+                        "{{ cart.coupon.code }}" ({{ cart.coupon.discount }}% off)
+                        <span>- ${{cart.get_discount}}</span>
+                    </li>
+                    {% endif %}
+                </ul>
+                <p>{% trans "Total" %}: ${{ cart.get_total_price_after_discount }}</p>
+            </div> 
         </div>
     </div>
+</div>
 </div>
 {% endblock %}

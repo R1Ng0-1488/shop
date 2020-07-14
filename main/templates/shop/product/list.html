@@ -17,20 +17,23 @@
 </div>
 <div>
 	<h1>{% if category %}{{ category.name }}{% else %}{% trans "Products" %}{% endif %}</h1>
-	<div class="row">
+	<div class="row my-5">
 		{% for product in products %}
 
-		<div class="col m-3 text-center">
-
-
+		<div class="col-sm-12 col-lg-3  text-center">
 					<a href="{{ product.get_absolute_url }}">
 						<img class="rounded" width="200" src="{% if product.image %}{{ product.image }}{% else %}{% static 'img/no_image.png' %}{% endif %}">
 					</a>
 					<h2 class=""><a href="{{ product.get_absolute_url }}">{{ product.name }}</a></h2>
-					<p class="">{{ product.price }} {% trans "rubles" %}</p>
+					<p class="">${{ product.price }}</p>
 
 		</div>
 		{% endfor %}
 	</div>
+	 <div class="row">
+        <div class="col">
+            {% include "includes/paginator.html" %}
+        </div>
+    </div>
 </div>
 {% endblock %}

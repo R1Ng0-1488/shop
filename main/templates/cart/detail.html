@@ -35,9 +35,9 @@
                     </td>
                     <td>{{ product.name }}</td>
                     <td>{{ item.quantity }}</td>
-                    <td><a href="{% url 'cart:cart_remove' product.id %}">{% trans "Remove" %}</a></td>
-                    <td>{{ item.price }} {% trans "rubles" %}</td>
-                    <td>{{ item.total_price }} {% trans "rubles" %}</td>
+                    <td><a class="text-danger" href="{% url 'cart:cart_remove' product.id %}">{% trans "Remove" %}</a></td>
+                    <td>${{ item.price }}</td>
+                    <td>${{ item.total_price }}</td>
                 </tr>
                 {% endwith %}
                 {% endfor %}
@@ -45,7 +45,7 @@
                 <tr>
                     <td>{% trans "Subtitle" %}</td>
                     <td colspan="4"></td>
-                    <td>{{ cart.get_total_price }} {% trans "rubles" %}</td>
+                    <td>${{ cart.get_total_price }}</td>
                 </tr>
                 <tr>
                     <td>
@@ -62,14 +62,15 @@
                     <td>{% trans "Total" %}</td>
                     <td colspan="4"></td>
                     <td>
-                        {{cart.get_total_price_after_discount}} {% trans "rubles" %}
+                        ${{cart.get_total_price_after_discount}}
                     </td>
                 </tr>
             </tbody>
         </table>
         <form class="" action="{% url 'coupons:apply' %}" method="post">
-            {{ coupon_apply_form }}
-            <input type="submit" name="" value="{% trans 'Apply' %}">
+            <label>{% trans "Code" %}</label>
+            {{ coupon_apply_form.code }}
+            <input class="btn btn-dark" type="submit" name="" value="{% trans 'Apply' %}">
             {% csrf_token %}
         </form>
         <p class="text-right">

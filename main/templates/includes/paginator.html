@@ -1,0 +1,16 @@
+{% load i18n %}
+{% if page_obj.has_previous or page_obj.has_next %}
+<nav class="" aria-label="Page navigation example">
+<ul class="pagination">
+    {% if page_obj.has_previous %}
+    <li class="page-item"><a style="background-color:" class="page-link " href="?page={{ page_obj.previous_page_number }}">{% trans "Previous" %}</a></li>
+    {% endif %}
+    {% for obj in page_obj.paginator.page_range %}
+    <li class="page-item "><a style="background-color:" class="page-link " href="?page={{ obj }}">{{ obj }}</a></li>
+    {% endfor %}
+    {% if page_obj.has_next %}
+    <li class="page-item "><a style="background-color:" class="page-link " href="?page={{ page_obj.next_page_number }}">{% trans "Next" %}</a></li>
+    {% endif %}
+</ul>
+</nav>
+{% endif %}

@@ -11,7 +11,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
-    <title>{% block title %}Shop{% endblock %}</title>
+    <title>{% block title %}{% trans "Shop" %}{% endblock %}</title>
 </head>
 
 <body>
@@ -41,9 +41,9 @@
                 {% with total_items=cart|length %}
                     {% if cart|length > 0 %}
                     {% trans "Your cart" %}:
-                    <a href="{% url 'cart:cart_detail' %}">
+                    <a class="text-primary" href="{% url 'cart:cart_detail' %}">
                     {{ total_items }} {% trans "item" %}{{ total_items|pluralize  }},
-                    {{ cart.get_total_price }} {% trans "rubles" %}</a>
+                    ${{ cart.get_total_price }}</a>
                     {% else %}
                         {% trans "Your cart" %}{% trans " is empty" %}
                     {% endif %}
@@ -53,16 +53,16 @@
     </nav>
 <div class="container-fluid">
     <div class="row">
-    <div class="col-2">
+    <div class="col-lg-2 col-sm-12">
 
-    <ul class="list-group">
-        <h3>{% trans "Categories" %}</h3>
+    <ul class="list-group bg-dark rounded text-white">
+        <h2 class=" m-3">{% trans "Categories" %}</h2>
         {% for cat in categories %}
-        <li class="list-group-item"><a href="{{ cat.get_absolute_url }}">{{ cat.name }}</a></li>
+        <li class="list-group-item"><a class="" href="{{ cat.get_absolute_url }}">{{ cat.name }}</a></li>
         {% endfor %}
     </ul>
     </div>
-    <div class="col-10">
+    <div class="col-lg-10 col-sm-12">
         {% block content %}
         {% endblock %}
     </div>
