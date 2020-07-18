@@ -13,6 +13,11 @@ def order_detail(obj):
     return format_html(f"<a href='{reverse('order:admin_order_detail', args=[obj.id])}'>Detail</a>")
 
 
+def order_pdf(obj):
+    return format_html(f"<a href='{reverse('order:admin_order_pdf', args=[obj.id])}'>PDF</a>")
+
+
+
 def export_to_csv(modeladmin, request, queryset):
     opts = modeladmin.model._meta
     response = HttpResponse(content_type='text/csv')
@@ -28,9 +33,9 @@ def export_to_csv(modeladmin, request, queryset):
             value = getattr(obj, field.name)
             if isinstance(value, datetime.datetime):
                 value = value.strftime('%d/%m/%Y')
-                data_row.append(value)
-                writer.writerow(data_row)
-                return response
+            data_row.append(value)
+        writer.writerow(data_row)
+    return response
 export_to_csv.short_description = 'Export to CSV'
 
 
@@ -41,7 +46,7 @@ class OrderItemInline(admin.TabularInline):
 
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
-    list_display = ['id', 'first_name', 'last_name', 'email', 'address', 'postal_code', 'city', 'paid', 'created', 'updated', order_detail]
+    list_display = ['id', 'first_name', 'last_name', 'email', 'address', 'postal_code', 'city', 'paid', 'created', 'updated', order_detail, order_pdf]
     list_display_links = ['id', 'first_name']
     list_filter = ['paid', 'created', 'updated']
     inlines = [OrderItemInline]

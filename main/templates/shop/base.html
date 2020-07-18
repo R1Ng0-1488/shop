@@ -37,6 +37,10 @@
                      </div>
                  </li>
             </ul>
+            <form action="{% url 'main:search' %}" class="form-inline m-2 my-lg-0"  method="get" name="filter">
+                <input class="form-control mr-sm-2" name="q" type="search" placeholder="{% trans 'Search' %}" aria-label="{% trans 'Search' %}">
+                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">{% trans 'Search' %}</button>
+            </form>
             <span class="navbar-text">
                 {% with total_items=cart|length %}
                     {% if cart|length > 0 %}

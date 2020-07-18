@@ -24,6 +24,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '^41-$6#9f5@%kcao16flz=c*kmq13z
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
+#DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -149,9 +150,9 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 STATIC_URL = '/static/'
-#STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
-STATIC_DIR = os.path.join(BASE_DIR, 'static')
-STATICFILES_DIRS = [STATIC_DIR]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+# STATIC_DIR = os.path.join(BASE_DIR, 'static')
+# STATICFILES_DIRS = [STATIC_DIR]
 
 CART_SESSION_ID = 'cart'
 

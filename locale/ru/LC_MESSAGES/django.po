@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-14 18:27+0500\n"
+"POT-Creation-Date: 2020-07-16 15:09+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,26 +54,26 @@ msgstr "Общая сумма"
 msgid "Status"
 msgstr "Статус"
 
-#: main/templates/admin/orders/detail.html:45
+#: main/templates/admin/orders/detail.html:45 main/templates/order/pdf.html:45
 msgid "Pending payment"
 msgstr "Ожидающий платеж"
 
-#: main/templates/admin/orders/detail.html:51
+#: main/templates/admin/orders/detail.html:51 main/templates/order/pdf.html:20
 msgid "Items bought"
 msgstr "Предметы куплены"
 
 #: main/templates/admin/orders/detail.html:54
-#: main/templates/cart/detail.html:15
+#: main/templates/cart/detail.html:15 main/templates/order/pdf.html:24
 msgid "Product"
 msgstr "Продукт"
 
 #: main/templates/admin/orders/detail.html:55
-#: main/templates/cart/detail.html:19
+#: main/templates/cart/detail.html:19 main/templates/order/pdf.html:25
 msgid "Price"
 msgstr "Цена"
 
 #: main/templates/admin/orders/detail.html:56
-#: main/templates/cart/detail.html:16
+#: main/templates/cart/detail.html:16 main/templates/order/pdf.html:26
 #: main/templates/shop/product/detail.html:24
 msgid "Quantity"
 msgstr "Количество"
@@ -81,6 +81,7 @@ msgstr "Количество"
 #: main/templates/admin/orders/detail.html:57
 #: main/templates/admin/orders/detail.html:70
 #: main/templates/cart/detail.html:62 main/templates/order/create.html:61
+#: main/templates/order/pdf.html:27 main/templates/order/pdf.html:40
 msgid "Total"
 msgstr "Всего"
 
@@ -169,6 +170,23 @@ msgstr "Спасибо"
 msgid "Your order has been successfully completed. Your order number is"
 msgstr "Ваш заказ был завершен успешно. Ваш номер заказа"
 
+#: main/templates/order/pdf.html:9 main/templates/shop/base.html:14
+#: main/templates/shop/base.html:19
+msgid "Shop"
+msgstr "Интернет Магазин"
+
+#: main/templates/order/pdf.html:10
+msgid "Invoice no."
+msgstr "Номер заказа"
+
+#: main/templates/order/pdf.html:12
+msgid "Bill to"
+msgstr "Счет на"
+
+#: main/templates/order/pdf.html:45
+msgid "Paid"
+msgstr "Оплачено"
+
 #: main/templates/payment/canceled.html:3
 msgid "Canceled"
 msgstr "Отменено"
@@ -197,27 +215,27 @@ msgstr "Оплатить кредитной картой."
 msgid "Card Number"
 msgstr "Номер карты"
 
-#: main/templates/shop/base.html:14 main/templates/shop/base.html:19
-msgid "Shop"
-msgstr "Интернет Магазин"
-
 #: main/templates/shop/base.html:29
 msgid "Languages"
 msgstr "Языки"
 
-#: main/templates/shop/base.html:43 main/templates/shop/base.html:48
+#: main/templates/shop/base.html:41 main/templates/shop/base.html:42
+msgid "Search"
+msgstr "Поиск"
+
+#: main/templates/shop/base.html:47 main/templates/shop/base.html:52
 msgid "Your cart"
 msgstr "Ваша корзина"
 
-#: main/templates/shop/base.html:45
+#: main/templates/shop/base.html:49
 msgid "item"
 msgstr "товар"
 
-#: main/templates/shop/base.html:48
+#: main/templates/shop/base.html:52
 msgid " is empty"
 msgstr " пуста"
 
-#: main/templates/shop/base.html:59
+#: main/templates/shop/base.html:63
 msgid "Categories"
 msgstr "Категории"
 

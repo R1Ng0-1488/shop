@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 import braintree
+
 from order.models import Order
+from order.tasks import order_created
 # Create your views here.
 
 def payment_process(request):
@@ -9,9 +11,7 @@ def payment_process(request):
 
     if request.method == 'POST':
         # get token for creating the transaction
-        print(request.POST)
         nonce = request.POST.get('payment_method_nonce', None)
-        print('nonce ->>', nonce)
         # create and save the transaction
         result = braintree.Transaction.sale({
             'amount': '{:.2f}'.format(order.get_total_cost()),
@@ -20,8 +20,9 @@ def payment_process(request):
                 'submit_for_settlement': True
             }
         })
-        print('result ->>', result)
         if result.is_success:
+            # start asinc task
+            order_created.delay(order_id)
             # отмечает заказ как оплаченного
             order.paid = True
             # Сохраниение id транзакции в заказ

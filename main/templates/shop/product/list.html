@@ -18,17 +18,18 @@
 <div>
 	<h1>{% if category %}{{ category.name }}{% else %}{% trans "Products" %}{% endif %}</h1>
 	<div class="row my-5">
-		{% for product in products %}
+		{% for product in product_list %}
 
 		<div class="col-sm-12 col-lg-3  text-center">
 					<a href="{{ product.get_absolute_url }}">
 						<img class="rounded" width="200" src="{% if product.image %}{{ product.image }}{% else %}{% static 'img/no_image.png' %}{% endif %}">
 					</a>
 					<h2 class=""><a href="{{ product.get_absolute_url }}">{{ product.name }}</a></h2>
-					<p class="">${{ product.price }}</p>
+					<h5 class="">${{ product.price }}</h5>
 
 		</div>
 		{% endfor %}
+
 	</div>
 	 <div class="row">
         <div class="col">
